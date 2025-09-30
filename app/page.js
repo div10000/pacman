@@ -308,7 +308,33 @@ function PacmanGame() {
                                  </g>
                              </g>
                         ))}
-                        <path d={getPacmanPath()} fill="#FFFF00" />
+                                                {/* Pac-Man body with black outline */}
+                                                <path d={getPacmanPath()} fill="red" stroke="#222" strokeWidth={2} />
+                                                {/* Pac-Man glossy highlight */}
+                                                <ellipse
+                                                    cx={pacman.x * tileSize + tileSize / 2 - tileSize * 0.18}
+                                                    cy={pacman.y * tileSize + tileSize / 2 - tileSize * 0.18}
+                                                    rx={tileSize * 0.13}
+                                                    ry={tileSize * 0.07}
+                                                    fill="green"
+                                                    opacity={0.25}
+                                                />
+                                                {/* Pac-Man eye */}
+                                                <circle
+                                                    cx={(() => {
+                                                        // Eye position slightly forward in direction of travel
+                                                        const angle = pacman.dir.angle;
+                                                        const rad = (deg) => (deg * Math.PI) / 180;
+                                                        return pacman.x * tileSize + tileSize / 2 + Math.cos(rad(angle)) * tileSize * 0.18;
+                                                    })()}
+                                                    cy={(() => {
+                                                        const angle = pacman.dir.angle;
+                                                        const rad = (deg) => (deg * Math.PI) / 180;
+                                                        return pacman.y * tileSize + tileSize / 2 - tileSize * 0.18 + Math.sin(rad(angle)) * tileSize * 0.09;
+                                                    })()}
+                                                    r={tileSize * 0.08}
+                                                    fill="green"
+                                                />
                     </g>
                 </svg>
             </div>
