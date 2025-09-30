@@ -1,0 +1,95 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Press Start 2P', cursive;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  /* max-width is now set dynamically with inline styles */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 1.5rem;
+  color: #ffff00;
+  text-shadow: 2px 2px #ff0000;
+}
+
+.score {
+  font-size: 1rem;
+  color: #fff;
+}
+
+.gameBoardContainer {
+  position: relative;
+  padding: 10px;
+  background-color: #111;
+  border: 4px solid #1010ff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #1010ff, inset 0 0 10px #1010ff;
+}
+
+.gameBoard {
+  display: block;
+  background-color: #000;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.overlayMessage {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffff00;
+  text-shadow: 3px 3px 0 #ff0000;
+  margin-bottom: 20px;
+  /* The "animation" property has been removed from here */
+}
+
+/* The @keyframes block for blinking is also removed */
+
+.resetButton {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1rem;
+  color: #000;
+  background-color: #ffff00;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: all 0.2s;
+}
+
+.resetButton:hover {
+  background-color: #fff;
+  box-shadow: 0 0 15px #ffff00;
+}
+
+.instructions {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: #aaa;
+}
